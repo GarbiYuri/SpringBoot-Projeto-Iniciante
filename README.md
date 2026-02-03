@@ -9,13 +9,6 @@ Diferente das versões anteriores do Spring Security demonstradas em tutoriais d
 Durante o desenvolvimento, identifiquei que o DaoAuthenticationProvider agora exige explicitamente o UserDetailsService como parâmetro para funcionar corretamente, evitando erros de injeção de dependência:
 Java
 
-@Bean
-public AuthenticationManager authenticationManager(UserDetailsService userDetailsService) {
-    DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-    authProvider.setUserDetailsService(userDetailsService); // Parâmetro necessário
-    authProvider.setPasswordEncoder(passwordEncoder());
-    return new ProviderManager(authProvider);
-}
 
 🛠️ Tecnologias Utilizadas
 
